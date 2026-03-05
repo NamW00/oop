@@ -39,3 +39,12 @@
 
 # debug information files
 *.dwo
+
+# User-specific files
+*.user
+*.vcxproj.user
+.vs/
+Debug/
+Release/
+x64/
+x86/
