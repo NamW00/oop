@@ -1,0 +1,10 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="../Class01th (Programming Basic)/Class01th (Programming Basic).vcxproj" Id="2f97be79-9766-4344-b607-440ee7b8575f">
+    <Build Solution="Debug|x64" Project="false" />
+  </Project>
+  <Project Path="Program.vcxproj" Id="a8c761ab-60f5-46f6-954e-fcff75b64ae7" />
+</Solution>
