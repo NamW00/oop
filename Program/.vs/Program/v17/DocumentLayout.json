@@ -1,12 +1,53 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\guddn\\Desktop\\oop\\Program\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A8C761AB-60F5-46F6-954E-FCFF75B64AE7}|Program.vcxproj|C:\\Users\\guddn\\Desktop\\oop\\Program\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A8C761AB-60F5-46F6-954E-FCFF75B64AE7}|Program.vcxproj|solutionrelative:Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F97BE79-9766-4344-B607-440EE7B8575F}|..\\Class01th (Programming Basic)\\Class01th (Programming Basic).vcxproj|C:\\Users\\guddn\\Desktop\\oop\\Class01th (Programming Basic)\\group_01.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Source.cpp",
+              "DocumentMoniker": "C:\\Users\\guddn\\Desktop\\oop\\Program\\Source.cpp",
+              "RelativeDocumentMoniker": "Source.cpp",
+              "ToolTip": "C:\\Users\\guddn\\Desktop\\oop\\Program\\Source.cpp",
+              "RelativeToolTip": "Source.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-11T22:24:02.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "group_01.cpp",
+              "DocumentMoniker": "C:\\Users\\guddn\\Desktop\\oop\\Class01th (Programming Basic)\\group_01.cpp",
+              "RelativeDocumentMoniker": "..\\Class01th (Programming Basic)\\group_01.cpp",
+              "ToolTip": "C:\\Users\\guddn\\Desktop\\oop\\Class01th (Programming Basic)\\group_01.cpp",
+              "RelativeToolTip": "..\\Class01th (Programming Basic)\\group_01.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-11T22:20:45.632Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
