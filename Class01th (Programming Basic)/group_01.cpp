@@ -1,8 +1,8 @@
 ﻿#include <iostream>
 
-#define MAX 7
-#define M 6
-#define N 7
+// const int MAX = 100; // ex22, 24, 25
+// const int M = 100; // ex25
+// const int N = 100; // ex25
 
 using namespace std;
 
@@ -54,7 +54,7 @@ int main() {
 	while (v <= N / 2) {
 		cout << v;
 		v *= 2;
-		cout << " >> " << v << "\t";
+		cout << " >> " << v << " ";
 	}
 	cout << endl;
 	cout << "while문 밖에서의 v값 : " << v << endl;
@@ -68,9 +68,8 @@ int main() {
 	int v = 1, N = 20;
 	for (int v = 1; v <= N/2; )
 	{
-		cout << v;
 		v *= 2;
-		cout << " >> " << v << "\t";
+		cout << " >> " << v << " ";
 	}
 	cout << endl;
 	cout << "for문 밖에서의 v값 : " << v << endl;
@@ -119,8 +118,9 @@ int main() {
 #pragma region ex22
 	/*
 	// 다음 프로그램이 하는 일은?
-	int N = 6;
-	int data[6] = { 1, 2, 3, 4, 5, 6 };
+	int N;
+	cin >> N;
+	int data[MAX];
 	// int data[MAX]; // MAX는 충분히 크다고 가정한다.
 	// 배열 data에는 data[0]에서 data[N-1]까지 N개의 정수가 저장되어 있다고 가정한다.
 	int tmp = data[0];
@@ -131,6 +131,29 @@ int main() {
 	// 전체적인 배열을 왼쪽으로 1칸씩 shift하는 일을 한다.
 	// 단 data[0]값은 임의의 변수 tmp에 저장하여 data[N-1]칸으로 이동시킨다.
 	// ex) [1, 2, 3, 4, 5, 6] -> [2, 3, 4, 5, 6, 1]
+	*/
+#pragma endregion
+#pragma region ex24
+	/*
+	int a[MAX];
+	int N;
+	cin >> N;
+	for (int i = 0; i < N; i++)
+		cin >> a[i];
+
+	int count = 1, tmp = a[0];
+
+	for (int i = 1; i < N; i++)
+	{
+		if (tmp != a[i])
+		{
+			tmp = a[i];
+			count++;
+		}
+	}
+
+	cout << endl;
+	cout << "The count is " << count << endl;
 	*/
 #pragma endregion
 #pragma region ex25
