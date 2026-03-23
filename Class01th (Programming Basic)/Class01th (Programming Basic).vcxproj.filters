@@ -36,5 +36,8 @@
     <ClCompile Include="preview_0319.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="preview_0326.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

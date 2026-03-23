@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string> // string을 사용하기위해 선언 해야하는 헤더파일
 #include <vector>
 #include <algorithm>
@@ -9,10 +9,10 @@ const int MAX = 100; // define MAX 100
 int main() {
 #pragma region 1.5 벡터(vector)
 #pragma region 백터의 생성, 초기화, 복사
-	/*	
+	/*
 	// 벡터의 생성과 초기화
 	vector<int> v1;	// 정수를 저장하는 벡터는 이렇게 선언한다. 크기가 0인 벡터가 생성된다.
-	
+
 	// push_back()함수 - 맨 끝에 새로운 원소 추가
 	v1.push_back(1);
 	v1.push_back(2);
@@ -34,7 +34,7 @@ int main() {
 	*/
 #pragma endregion
 #pragma region code36(벡터 생성, 치환, 원소 추가)
-	/*	
+	/*
 	vector<int> v; // 정수(int)들을 저장하기 위한 빈(empty) 벡터 v를 생성
 
 	v.push_back(1); // push_back은 항상 벡터의 맨 뒤에 새로운 원소를 삽입
@@ -90,7 +90,7 @@ int main() {
 	*/
 #pragma endregion
 #pragma region code37("range for"문)
-	/*	
+	/*
 	vector<int> data = { 1, 2, 3, 4 }; // 1, 2, 3, 4를 저장하는 길이가 4인 벡터 생성
 	int sum = 0;
 	for (int t: data) // 벡터 data에 저장된 각각의 정수 t에 대하여
@@ -100,9 +100,9 @@ int main() {
 	// 배열의 크기와 배열에 실제로 저장된 데이터의 개수가 다른 경우 -> 사용해서는 안된다.
 	int arr[10]; // 크기가 10인 배열 arr
 	arr[0] = 1, arr[1] = 2, arr[3] = 3; // 실제로는 앞에 3칸에만 3개의 정수가 저장됨
-	
+
 	int sum_arr = 0;
-	for (int t : arr) // 3개의 정수가 아니라 10개의 정수가 더해지는데 
+	for (int t : arr) // 3개의 정수가 아니라 10개의 정수가 더해지는데
 		sum_arr += t;	// 그 중 7개는 무의미한 쓰레기 값
 	cout << sum_arr << endl; // 무의미한 값이 출력됨
 	*/

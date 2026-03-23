@@ -134,6 +134,7 @@
     <ClCompile Include="preview_0305.cpp" />
     <ClCompile Include="preview_0312.cpp" />
     <ClCompile Include="preview_0319.cpp" />
+    <ClCompile Include="preview_0326.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
