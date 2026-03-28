@@ -1,6 +1,6 @@
 #include <iostream>
-#include <string>
 using namespace std;
+const int MAX = 100;
 
 int main() {
 #pragma region 1.3 배열(array)
@@ -77,7 +77,7 @@ int main() {
 	int s;
 	cin >> s;
 	int count = 0;
-	for (int i = 0; i < n; i++){
+	for (int i = 0; i < n-1; i++){ // i와 j가 순서가 겹치지 않을때의 마지막 i가 n-2번째 항을 가리켜야하므로
 		for (int j = i+1; j < n; j++){ // i < j인 만족하는 순서쌍만 구하면 되므로
 			if (data[i] + data[j] == s)
 				count++;
@@ -94,14 +94,15 @@ int main() {
 	for (int i = 0; i < n; i++)
 		cin >> data[i];
 
-	int maxSum = 0;
-	for (int i = 0; i < n; i++){
-		int sum = 0;
-		for (int j = i; j < n; j++)
-		{
+	int maxSum = 0;					// 합 계산할때 주의할 점 : 초기값 설정
+	// if 모든 입력값이 음수라면 초기값인 0보다 작으므로 maxSum에 제대로 반영되기 힘들다
+	// 따라서 초기값은 data[0]과 같은 값으로 해주어야 오류 방지가 가능하다. 
+	for (int i = 0; i < n; i++){	// 구간합의 시작점 i
+		int sum = 0;				// i++ 하며 sum의 값 계산
+		for (int j = i; j < n; j++){ // i번째항 부터 임의의 값 j번째항(j<n)까지의 구간 합이 maxSum보다 큰지에 대해 조사
 			sum += data[j];
-			if (sum > maxSum)	// 이때까지의 합이 maxSum으로 저장했던 값 보다 크면
-				maxSum = sum;	// sum값을 maxSum값으로 갱신한다.
+			if (sum > maxSum)		// 이때까지의 합이 maxSum 값 보다 크면
+				maxSum = sum;		// sum값을 maxSum값으로 갱신한다.
 		}
 	}
 	cout << maxSum << endl;
@@ -155,13 +156,111 @@ int main() {
 	}
 	*/
 #pragma endregion
-#pragma region code24( )
+#pragma region code24(n개의 정수를 입력받은 후 중복된 정수들을 제거하고 남은 정수들만 출력)
+	/*
+	int n;
+	int data[MAX];
+	cin >> n;
+	for (int i = 0; i < n; i++)
+		cin >> data[i];
 
+	for (int i = n-1; i > 0; i--)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			if (data[j] > data[j+1])
+			{
+				int tmp = data[j];
+				data[j] = data[j + 1];
+				data[j + 1] = tmp;
+			}
+		}
+	}
+	int k = 0;
+	for (int i = 0; i < n; i++)
+	{
+		if (data[i] != data[i - 1]) data[++k] = data[i];
+	}
+
+	for (int i = 0; i < k; i++)
+	{
+		cout << data[i] << " ";
+	}
+	*/
 #pragma endregion
-#pragma region code25( )
-
+#pragma region code25(정수가 입력될 때 마다 오름차순으로 정렬)
+	/*
+	int n, t;
+	int data[MAX];
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> t;
+		int j = i - 1; // 앞에서 부터 조사하기보다 뒤에서 부터 조사하는게 효율적
+		while (j >= 0 && data[j] > t) {
+			data[j + 1] = data[j];
+			j--;
+		}
+		data[j + 1] = t;
+		for (int k = 0; k <= i; k++)
+			cout << data[k] << " ";
+		cout << endl;
+	}
+	*/
 #pragma endregion
+#pragma region code26(n*n크기의 2차원 배열을 입력받아 열우선 순위로 출력)
+	/*
+	int n;
+	int mat[MAX][MAX];
+	cin >> n;
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < n; j++)
+			cin >> mat[i][j];
 
+	//for (int i = 0; i < n; i++)
+	//	for (int j = 0; j < n; j++)
+	//		cout << mat[j][i] << " ";
+	cout << endl;
+	for (int j = 0; j < n; j++) //열 우선순위
+		for (int i = 0; i < n; i++)
+			cout << mat[i][j] << " ";
+	*/
+#pragma endregion
+#pragma region code27(n*n 크기의 2차원 배열에서 행의 합과 열의 평균을 계산하여 )
+	/*
+	int n;
+	int mat[MAX][MAX];
+	cin >> n;
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < n; j++)
+			cin >> mat[i][j];
+
+	int row_sum[MAX] = { 0 }, col_sum[MAX] = { 0 }; // 배열의 모든 값 0으로 초기화
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			row_sum[i] += mat[i][j]; // 행의 합
+			col_sum[j] += mat[i][j]; // 열의 합
+		}
+	}
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << mat[i][j] << " ";
+		}
+		cout << " | " << (double)row_sum[i] / n << endl;
+	}
+	for (int j = 0; j < n; j++)
+		cout << "--";
+	cout << endl;
+	for (int j = 0; j < n; j++)
+	{
+		cout << (double)col_sum[j] / n << " ";
+	}
+	*/
+#pragma endregion
 #pragma endregion
 
 	return 0;

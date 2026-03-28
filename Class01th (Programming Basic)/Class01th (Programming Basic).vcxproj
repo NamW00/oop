@@ -131,10 +131,10 @@
     <ClCompile Include="Assignment02.cpp" />
     <ClCompile Include="group_01.cpp" />
     <ClCompile Include="group_02.cpp" />
-    <ClCompile Include="preview_0305.cpp" />
-    <ClCompile Include="preview_0312.cpp" />
-    <ClCompile Include="preview_0319.cpp" />
-    <ClCompile Include="preview_0326.cpp" />
+    <ClCompile Include="preview_0305%28iostream%29.cpp" />
+    <ClCompile Include="preview_0312%28array%29.cpp" />
+    <ClCompile Include="preview_0319%28string%29.cpp" />
+    <ClCompile Include="preview_0326%28vector%29.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
