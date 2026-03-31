@@ -1,17 +1,41 @@
 ﻿#include <iostream>
-#include <string> // string을 사용하기위해 선언 해야하는 헤더파일
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-const int MAX = 100; // define MAX 100
+bool compare(pair<int, int>& a, pair<int, int>& b) {
+	if (a.second == b.second) return a.first < b.first;
+	return a.second < b.second;
+}
 
 int main() {
-#pragma region 1.4 문자열(string)
-#pragma region code28(string 생성방법)
+	int n;
+	cin >> n;
+	vector<pair<int, int>> v(n);
 
-#pragma endregion
+	for (int i = 0; i < n; i++)
+		cin >> v[i].first >> v[i].second;
+	
+	sort(v.begin(), v.end(), compare);
 
-#pragma endregion
+	vector<pair<int, int>> result;
 
+	if (n > 0){
+		result.push_back(v[0]);
+		int last_end = v[0].second;
 
+		for (int i = 1; i < n; i++){
+			if (v[i].first >= last_end){
+				result.push_back(v[i]);
+				last_end = v[i].second;
+			}
+		}
+	}
+	
+	for (int i = 0; i < result.size(); i++){
+		cout << result[i].first << " " << result[i].second << endl;
+	}
+
+	
 	return 0;
 }
