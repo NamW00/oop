@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2f97be79-9766-4344-b607-440ee7b8575f}</ProjectGuid>
-    <RootNamespace>Class01thProgrammingBasic</RootNamespace>
+    <ProjectGuid>{8a5b8e23-5e03-4c03-b890-98ba89b14440}</ProjectGuid>
+    <RootNamespace>ProgAssignment</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,10 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="preview_0305%28iostream%29.cpp" />
-    <ClCompile Include="preview_0312%28array%29.cpp" />
-    <ClCompile Include="preview_0319%28string%29.cpp" />
-    <ClCompile Include="preview_0326%28vector%29.cpp" />
+    <ClCompile Include="..\Class01th (Programming Basic)\Assignment01.cpp" />
+    <ClCompile Include="..\Class01th (Programming Basic)\Assignment02.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

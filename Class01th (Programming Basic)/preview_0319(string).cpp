@@ -23,14 +23,22 @@ int main() {
 	*/
 #pragma endregion
 #pragma region code29(문자열 입력)
+	// string str;
+	// cin >> str;	- 공백이나 줄바꿈 문자를 무시한다. 즉, 라인의 끝을 인식할 수 없다.
+	// getline -> 지정한 문자가 나올때 까지 읽어 주는 함수이다.
+	// getline(cin, str); == getline(cin, text, '\n');
+	// getline(cin, str, '\t'); - 탭문자(\t)가 나올때 까지 읽는다.
+	// 
 	/*
 	string text;
 
 	while (true) {
-		getline(cin, text); // 라인 전체를 한 번에 읽어서 두 번째 매개변수인 text에 저장.(줄바꿈은 저장X)
+		getline(cin, text); // getline(cin, text, '\n')과 동일
+		// 라인 전체를 한 번에 읽어서 두 번째 매개변수인 text에 저장.(줄바꿈은 저장X)
 		if (text == "exit")
 			break;
 		cout << text << ":" << text.length() << endl;
+		// length() 혹은 size() 메서드는 스트링의 길이를 반환한다.
 	}
 	*/
 #pragma endregion
@@ -76,9 +84,6 @@ int main() {
 	for (int i = 0; i < k; i++)
 		cout << words[i] << " " << count[i] << endl;
 	*/
-
-#pragma endregion
-#pragma region code31(팰린드롬 검사 - 거꾸로 읽어도 동일한 문자열)
 
 #pragma endregion
 

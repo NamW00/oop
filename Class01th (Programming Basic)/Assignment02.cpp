@@ -5,6 +5,12 @@
 #include <vector>
 using namespace std;
 const int MAX = 100;
+
+bool compare(pair<int, int>& a, pair<int, int>& b) {
+	if (a.second == b.second) return a.first < b.first;
+	return a.second < b.second;
+}
+
 int main() {
 #pragma region ex01(입력받은 문자열 공백 제거후 남은 텍스트와 길이 출력)
     /*  

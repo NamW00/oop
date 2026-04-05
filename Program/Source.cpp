@@ -1,41 +1,28 @@
 ﻿#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <string>
+#include <cctype>
 using namespace std;
-
-bool compare(pair<int, int>& a, pair<int, int>& b) {
-	if (a.second == b.second) return a.first < b.first;
-	return a.second < b.second;
-}
+const int MAX = 100;
 
 int main() {
-	int n;
-	cin >> n;
-	vector<pair<int, int>> v(n);
-
-	for (int i = 0; i < n; i++)
-		cin >> v[i].first >> v[i].second;
+#pragma region code31(팰린드롬 검사 - 거꾸로 읽어도 동일한 문자열)
 	
-	sort(v.begin(), v.end(), compare);
+#pragma endregion
 
-	vector<pair<int, int>> result;
+#pragma region code32()
 
-	if (n > 0){
-		result.push_back(v[0]);
-		int last_end = v[0].second;
+#pragma endregion
 
-		for (int i = 1; i < n; i++){
-			if (v[i].first >= last_end){
-				result.push_back(v[i]);
-				last_end = v[i].second;
-			}
-		}
-	}
-	
-	for (int i = 0; i < result.size(); i++){
-		cout << result[i].first << " " << result[i].second << endl;
-	}
+#pragma region code33()
 
-	
+#pragma endregion
+#pragma region code34()
+
+#pragma endregion
+#pragma region code35()
+
+#pragma endregion
+
+
 	return 0;
 }
