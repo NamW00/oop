@@ -6,10 +6,27 @@
 using namespace std;
 const int MAX = 100;
 
+#pragma region ex09
 bool compare(pair<int, int>& a, pair<int, int>& b) {
 	if (a.second == b.second) return a.first < b.first;
 	return a.second < b.second;
 }
+#pragma endregion
+#pragma region ex09_1
+bool cmp(string& s1, string& s2) {
+	auto it1 = s1.rbegin();
+	auto it2 = s2.rbegin();
+	while (it1 != s1.rend() && it2 != s2.rend()) {
+		if (*it1 != *it2) {
+			return *it1 < *it2;
+		}
+		++it1; ++it2;
+	}
+	return s1.length() < s2.length();
+}
+#pragma endregion
+
+
 
 int main() {
 #pragma region ex01(입력받은 문자열 공백 제거후 남은 텍스트와 길이 출력)
@@ -198,7 +215,7 @@ int main() {
 	cout << text << endl;
 	*/
 #pragma endregion
-#pragma region ex06()
+#pragma region ex06(n개의 정수를 입력받아 벡터에 저장한 후 크기순 정렬, 중복된 수 제거)
 
 #pragma endregion
 
@@ -290,7 +307,21 @@ int main() {
 	for (int i = 0; i < result.size(); i++)
 		cout << result[i].first << " " << result[i].second << endl;
 	*/
+#pragma endregion
+#pragma region ex09_1(문자열 입력 후 각 문자열을 뒤집었을때의 사전식 순서 정렬)
+	/*
+	int n;
+	cin >> n;
+	vector<string> v(n);
 
+	for (int i = 0; i < n; ++i)
+		cin >> v[i];
+
+	std::sort(v.begin(), v.end(), cmp);
+
+	for (string& s : v)
+		cout << s << endl;
+	*/
 #pragma endregion
 
 	return 0;
