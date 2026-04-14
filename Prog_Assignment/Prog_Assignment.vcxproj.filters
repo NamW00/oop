@@ -21,5 +21,11 @@
     <ClCompile Include="..\Class01th (Programming Basic)\Assignment02.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Assignment03_1.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment03_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
