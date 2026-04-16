@@ -1,0 +1,6 @@
+What that default value is
+depend on
+the type of the
+
+variable and may also depend on
+where the variable is defined

@@ -121,17 +121,48 @@ int main() {
 	int sum = 0, start = 0; // sum은 합, start는 문자열 내에 검색할 시작 인덱스 값
 	while (true){
 		int fIndex = s.find("+", start);
-		if (fIndex == -1){ // '+' 문자를 발견할 수 없다는 뜻
-			string part = s.substr(start);
-			if (part == "") break;
+		if (fIndex == -1){					// '+' 문자를 발견할 수 없다는 뜻 = 마지막 수 or 문자열 비어있음
+			string part = s.substr(start);  // start위치에서 문자열의 끝까지
+			if (part == "") break;			// 만약 문자열이 비어있으면 break
 			sum += stoi(part);
-
+			break;
 		}
-
+		// 2) "+"를 find했을때의 fIndex = (start위치 이후의 +위치)
+		int count = fIndex - start;				// count는 +감지 되기 전까지의 숫자 개수
+		string part = s.substr(start, count);	// start위치부터 count개 만큼 추출해서 part문자열에 저장
+		sum += stoi(part);
+		start = fIndex + 1;						// start는 +위치를 가리키고 있으므로 다음 숫자를 가리키게 +1
 	}
+	cout << "sum = " << sum << endl;
 	*/
-
 #pragma endregion
+#pragma region ex34(txt 파일을 읽고 파일의 라인들의 길이를 내림차순 정렬)
+	/*
+	ifstream infile("input34.txt");
+	string lines[MAX];
+	string line;
+	int n = 0;
+	while (getline(infile, line)) // getline함수는 함수의 끝에 들어가면 false를 반환
+		if (line != "") // line.length() > 0
+			lines[n++] = line;
+	infile.close();
+
+	// 버블 정렬
+	for (int i = n-1; i > 0; i--){
+		for (int j = 0; j < i; j++){
+			if (lines[j].length() > lines[j+1].length()){
+				string tmp = lines[j];
+				lines[j] = lines[j + 1];
+				lines[j + 1] = tmp;
+			}
+		}
+	}
+
+	for (int i = 0; i < n; i++)
+		cout << lines[i] << endl;
+	*/
+#pragma endregion
+
 
 #pragma endregion
 	return 0;

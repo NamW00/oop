@@ -11,9 +11,9 @@ int board[20][20];
 int dr[] = { 0, 1, 1, 1 };
 int dc[] = { 1, 0, 1, -1 };
 
-bool checkWinner(int r, int c, int color) {
+bool checkWin(int r, int c, int color) { // vector<vector<int>>& board, int n
     for (int i = 0; i < 4; i++) {
-        int count = 1;
+        int count = 1; 
 
         // 정방향 탐색
         int nr = r + dr[i];
@@ -39,10 +39,8 @@ bool checkWinner(int r, int c, int color) {
 }
 
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    if (!(cin >> N)) return 0;
+    int N;
+    cin >> N;
 
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -50,13 +48,13 @@ int main() {
         }
     }
 
-    int winner = 0; // 0: No Winner, 1: Black, 2: White
+    int win = 0; // 0: No Winner, 1: Black, 2: White
 
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             if (board[i][j] != 0) {
-                if (checkWinner(i, j, board[i][j])) {
-                    winner = board[i][j];
+                if (checkWin(i, j, board[i][j])) {
+                    win = board[i][j];
                     goto end_search; // 승자를 찾으면 즉시 종료
                 }
             }
@@ -64,8 +62,8 @@ int main() {
     }
 
 end_search:
-    if (winner == 1) cout << "Black" << endl;
-    else if (winner == 2) cout << "White" << endl;
+    if (win == 1) cout << "Black" << endl;
+    else if (win == 2) cout << "White" << endl;
     else cout << "No Winner" << endl;
 
     return 0;

@@ -40,8 +40,50 @@ string cleanWord(string s) {
 bool compare(const WordInfo& a, const WordInfo& b) {
 	return a.word < b.word;
 }
+/*
+// class 보다는 struct로 하는건
+class Word {
+public:
+	string word;
+	vector<pair<int, int>>spot;
+	// pair라는 순서쌍 컨테이너를 사용
+};
+void bubble(vector<Word>& lists);
+*/
+
 
 int main() {
+	/*	
+	string sent;
+	vector<Word> lists;
+
+	int lcount = 1;
+	while (true) {
+		getline(cin, sent);
+		if (sent == "End.") break;
+		stringstream sstream(sent); // 쪼개서 sstream 통에 넣음
+		string tmp; // 쪼갠거 받는 통
+		int wcount = 1;
+		while (sstream >> tmp) {
+			Word w;
+			string clean = "";
+			while (!tmp.empty() && !isalpha(tmp.front());
+			tmp.erase(0, 1);
+			// stringstream : 내가 이미 가지고 있는 string 객체를 
+			while (!tmp.empty())
+			{
+
+			}if (tmp.empty()) continue;
+			bool value = true;
+			int i = 0;
+			for (i = 0; i < list.size(th)); i++)
+			{
+
+			}
+
+		}
+	}
+	*/
 	vector<WordInfo> wordList;
 	string line;
 	int lineNum = 1;
