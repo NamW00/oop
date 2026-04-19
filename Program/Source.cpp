@@ -1,16 +1,19 @@
 ﻿#include <iostream>
 #include <string>
-#include <vector>
-#include <sstream>
-#include <algorithm>
-#include <cctype>
+#include <fstream>
 
 using namespace std;
-const int MAX = 100;
+const int MAX = 1000;
 
 int main() {
+	ifstream infile("input35.txt");
+	string str;
+	string words[MAX];
+	int n = 0;
 
-		
+	while (infile >> str) {
+
+	}
 	return 0;
 }
 

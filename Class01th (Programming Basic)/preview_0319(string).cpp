@@ -1,9 +1,11 @@
 #include <iostream>
 #include <string> // string을 사용하기위해 선언 해야하는 헤더파일
+#include <fstream> // 파일로부터 데이터를 읽기 위해 선언하는 헤더파일
 #include <algorithm>
 #include <cctype>
 using namespace std;
 const int MAX = 100;
+
 int main() {
 #pragma region 1.4 문자열(code28~35)
 #pragma region code28(문자열 생성방법)
@@ -138,16 +140,19 @@ int main() {
 #pragma endregion
 #pragma region ex34(txt 파일을 읽고 파일의 라인들의 길이를 내림차순 정렬)
 	/*
-	ifstream infile("input34.txt");
+	ifstream infile("input34.txt"); // 읽고자하는 파일에 대한 ifstream을 이렇게 생성
+	// 데이터파일이 프로그램의 working directory에 위치해 있다면 이렇게 파일 이름만 명시하면 된다.
+	// 아닌 경우에는 절대 경로 혹은 working directory에서 부터의 상대경로를 제공해야 한다.
+
 	string lines[MAX];
 	string line;
 	int n = 0;
-	while (getline(infile, line)) // getline함수는 함수의 끝에 들어가면 false를 반환
-		if (line != "") // line.length() > 0
-			lines[n++] = line;
-	infile.close();
+	while (getline(infile, line)) // 파일로 부터 한 라인을 읽는다. 파일의 끝에 도달하면 false가 된다.
+		lines[n++] = line;		  // 각 라인들을 line이라는 문자열에 불러들여서 문자열 배열인 lines에 입력
 
-	// 버블 정렬
+	infile.close(); // 파일을 열었으면 반드시 close해주어야 한다.
+
+	// bubble sort
 	for (int i = n-1; i > 0; i--){
 		for (int j = 0; j < i; j++){
 			if (lines[j].length() > lines[j+1].length()){
@@ -161,6 +166,9 @@ int main() {
 	for (int i = 0; i < n; i++)
 		cout << lines[i] << endl;
 	*/
+#pragma endregion
+#pragma region ex35(텍스트 파일을 읽고 등장하는 목록을 출력하는 프로그램 작성-중복 제외)
+
 #pragma endregion
 
 
