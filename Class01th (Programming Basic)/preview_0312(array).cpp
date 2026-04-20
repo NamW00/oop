@@ -3,7 +3,7 @@ using namespace std;
 const int MAX = 100;
 
 int main() {
-#pragma region 1.3 배열(array)
+#pragma region 1.3 배열(code17~27)
 #pragma region code17(n개의 정수 입력후, 합과 최대값 구하기)
 	/*
 	// 배열에는 동일한 타입의 여러개의 데이터 저장 가능하다.
@@ -262,6 +262,5 @@ int main() {
 	*/
 #pragma endregion
 #pragma endregion
-
 	return 0;
 }

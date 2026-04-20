@@ -1,8 +1,8 @@
 #include <iostream>
-#include <string> // string을 사용하기위해 선언 해야하는 헤더파일
-#include <fstream> // 파일로부터 데이터를 읽기 위해 선언하는 헤더파일
-#include <algorithm>
-#include <cctype>
+#include <string> // string을 사용하기위해 선언
+#include <fstream> // 파일로부터 데이터를 읽기 위해 선언
+#include <algorithm> // std::sort함수를 사용하기 위해 선언
+#include <cctype> // isalnum, tolower과 같은 함수를 사용하기 위해 선언
 using namespace std;
 const int MAX = 100;
 
@@ -141,6 +141,7 @@ int main() {
 #pragma region ex34(txt 파일을 읽고 파일의 라인들의 길이를 내림차순 정렬)
 	/*
 	ifstream infile("input34.txt"); // 읽고자하는 파일에 대한 ifstream을 이렇게 생성
+	// 출력을 할때는 ofstream을 사용
 	// 데이터파일이 프로그램의 working directory에 위치해 있다면 이렇게 파일 이름만 명시하면 된다.
 	// 아닌 경우에는 절대 경로 혹은 working directory에서 부터의 상대경로를 제공해야 한다.
 
@@ -168,10 +169,41 @@ int main() {
 	*/
 #pragma endregion
 #pragma region ex35(텍스트 파일을 읽고 등장하는 목록을 출력하는 프로그램 작성-중복 제외)
+	ifstream infile("input35.txt");
+	string str;
+	string words[MAX];
+	int n = 0;
+
+	while (infile >> str) {	//파일의 끝에 도달하면 false가 된다.
+		int s = 0, t = str.length() - 1;
+		while (s < str.length() && !isalnum(str[s]))	// 문자열에 앞에서부터 처음으로 등장하는 알파벳이나 숫자의 위치 s를 찾는다.
+			s++;
+		while (t >= 0 && !isalnum(str[t]))				// 문자열의 뒤에서부터 처음으로 등장하는 알파벳이나 숫자의 위치 t를 찾는다.
+			t--;
+		if (s <= t)	// 특수문자로만 이루어진 문자열이라면 s > t가 될 것이다.
+		{
+			string pure_word = str.substr(s, t - s + 1); // 위치 s에서 시작되는 길이가 t-s+1인 부분 문자열을 잘라낸다.
+			for (int i = 0; i < pure_word.length(); i++)
+				pure_word[i] = tolower(pure_word[i]);
+
+			bool found = false;
+			for (int i = 0; i < n; i++) {
+				if (words[i] == pure_word) { // 이미 목록에 등록된 문자열인지 검사
+					found = true;
+					break;
+				}
+			}
+			if (!found)
+				words[n++] = pure_word; // 목록에 없는 문자열만 목록에 추가한다.
+
+		}
+	}
+	infile.close();
+
+	for (int i = 0; i < n; i++)
+		cout << words[i] << endl;
 
 #pragma endregion
-
-
 #pragma endregion
 	return 0;
 }
