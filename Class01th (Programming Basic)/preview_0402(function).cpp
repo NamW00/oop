@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -6,7 +6,7 @@
 #include <algorithm> // find 함수 사용
 using namespace std;
 const int MAX = 100;
-#pragma region 함수정의 모음(code46~)
+#pragma region 함수 정의(code46~)
 /*
 int power(int x, int y);			// code46
 
@@ -35,7 +35,7 @@ int main() {
 	*/
 #pragma endregion
 #pragma region code47(1~100000사이의 모든 소수 출력)
-	/*	
+	/*
 	for (int i = 2; i < 100; i++){
 		if (isPrime(i))
 			cout << i << endl;
@@ -43,7 +43,7 @@ int main() {
 	*/
 #pragma endregion
 #pragma region code48(n개의 정수 배열값을 받고, 버블 정렬 함수 설계)
-	/*	
+	/*
 	int data[MAX], n;
 	cin >> n;
 	for (int i = 0; i < n; i++)
@@ -57,11 +57,11 @@ int main() {
 	*/
 #pragma endregion
 #pragma region code49(배열 혹은 벡터 매개변수)
-	/*	
+	/*
 	vector<int> v = { 1, 2, 3, 4, 5 };
 	int arr[] = { 1, 2, 3, 4, 5 }; // 크기가 5인 배열 자동 생성
 	// 배열을 선언할때 초기화 할 값들이 정해져 있다면 굳이 배열의 크기를 지정하지 않아도 된다.
-	
+
 	// test 전
 	cout << "Before:\n";
 	for (auto x : v)
@@ -85,7 +85,7 @@ int main() {
 	*/
 #pragma endregion
 #pragma region code50(txt파일을 읽고 단어의 앞뒤에 붙은 특수문자들 모두 제거, 소문자 변환)
-	/*	
+	/*
 	ifstream infile("input35.txt"); // txt파일 불러옴
 	string str;
 	vector<string> words;
@@ -94,7 +94,7 @@ int main() {
 		if (str.length() > 0){		// 단어가 맞으면(trim함수에서 s <= t이면)
 			tolowercase(str);		// 소문자 변환
 			auto it = find(words.begin(), words.end(), str);
-			// vector<int>::iterator it = find(first, last, 
+			// vector<int>::iterator it = find(first, last,
 			// 벡터에서의 find 사용법
 			// 첫번째 인자: vector의 시작부분
 			// 두번째 인자: (vector의 끝부분 + 1)(= words.end())
@@ -108,7 +108,6 @@ int main() {
 		cout << s << " ";
 	*/
 #pragma endregion
-
 
 #pragma endregion
 

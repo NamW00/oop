@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="preview_0402%28function%29.cpp" />
     <ClCompile Include="preview_0305%28iostream%29.cpp" />
     <ClCompile Include="preview_0312%28array%29.cpp" />
     <ClCompile Include="preview_0319%28string%29.cpp" />

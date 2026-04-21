@@ -53,22 +53,21 @@ int main() {
 	// 변수 값 정리
 	// n : 단어 입력 횟수
 	// k : 실제 저장된 단어의 개수(중복 제외)
-	for (int i = 0; i < n; i++){
+	for (int i = 0; i < n; i++) {
 		cin >> str;
-		
-		// 다른 방법
-		// int j = 0;
-		// while (j < k) {
-		// 	if (words[j] == str)
-		// 		break;
-		// 	j++;
-		// }
 		int j = 0; // for문(i에 대한) 안에서만 존재
 		for (; j < k; j++) // 이 for문에 극한하지 않게 j를 사용하고 싶기 때문에 밖에 따로 정의
 		{
 			if (words[j] == str)
 				break;
 		} // 만약 겹친다면 몇번째 항이 겹치는지 j를 통해 알 수 있다.
+		// 다른 방법(while문 사용)
+		// int j = 0;
+		// while (j < k) {
+		// 	if (words[j] == str)
+		// 		break;
+		// 	j++;
+		// }
 		if (j >= k) // 겹치지 않는다면 j = k이므로 새로운 words[k]에 str을 입력하고 count[k]값도 1로 초기화
 		{
 			words[k] = str;
@@ -78,13 +77,12 @@ int main() {
 		}
 		else
 			count[j]++;
-
+	}
 	for (int i = 0; i < k; i++)
 		cout << words[i] << " " << count[i] << endl;
 	*/
-
 #pragma endregion
-#pragma region ex31(팰린드롬 검사 - 바로 읽으나 거꾸로 읽으나 동일한 문자열)
+#pragma region code31(팰린드롬 검사 - 바로 읽으나 거꾸로 읽으나 동일한 문자열)
 	/*
 	string str;
 	cin >> str;
@@ -98,7 +96,7 @@ int main() {
 	cout << "Palindrome." << endl;
 	*/
 #pragma endregion	
-#pragma region ex32(N개의 단어를 입력받고)
+#pragma region code32(문자열 배열에서 특정 문자열 find해서 출력)
 	/*
 	string words[MAX], pattern;
 	int N;
@@ -116,7 +114,7 @@ int main() {
 	}
 	*/
 #pragma endregion
-#pragma region ex33(여러 수를 더한 덧셈식의 문자열을 입력받아 계산)
+#pragma region code33(여러 수를 더한 덧셈식의 문자열을 입력받아 계산)
 	/*
 	string s;
 	getline(cin, s);
@@ -138,7 +136,7 @@ int main() {
 	cout << "sum = " << sum << endl;
 	*/
 #pragma endregion
-#pragma region ex34(txt 파일을 읽고 파일의 라인들의 길이를 내림차순 정렬)
+#pragma region code34(txt 파일을 읽고 파일의 라인들의 길이를 내림차순 정렬)
 	/*
 	ifstream infile("input34.txt"); // 읽고자하는 파일에 대한 ifstream을 이렇게 생성
 	// 출력을 할때는 ofstream을 사용
@@ -168,7 +166,8 @@ int main() {
 		cout << lines[i] << endl;
 	*/
 #pragma endregion
-#pragma region ex35(텍스트 파일을 읽고 등장하는 목록을 출력하는 프로그램 작성-중복 제외)
+#pragma region code35(텍스트 파일을 읽고 등장하는 목록을 출력하는 프로그램 작성-중복 제외)
+	/*
 	ifstream infile("input35.txt");
 	string str;
 	string words[MAX];
@@ -180,8 +179,7 @@ int main() {
 			s++;
 		while (t >= 0 && !isalnum(str[t]))				// 문자열의 뒤에서부터 처음으로 등장하는 알파벳이나 숫자의 위치 t를 찾는다.
 			t--;
-		if (s <= t)	// 특수문자로만 이루어진 문자열이라면 s > t가 될 것이다.
-		{
+		if (s <= t) { // 특수문자로만 이루어진 문자열이라면 s > t가 될 것이다.
 			string pure_word = str.substr(s, t - s + 1); // 위치 s에서 시작되는 길이가 t-s+1인 부분 문자열을 잘라낸다.
 			for (int i = 0; i < pure_word.length(); i++)
 				pure_word[i] = tolower(pure_word[i]);
@@ -202,7 +200,7 @@ int main() {
 
 	for (int i = 0; i < n; i++)
 		cout << words[i] << endl;
-
+	*/
 #pragma endregion
 #pragma endregion
 	return 0;
