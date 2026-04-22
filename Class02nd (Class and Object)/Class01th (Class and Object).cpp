@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -6,6 +6,7 @@
 #include <algorithm>
 using namespace std;
 
+#pragma region 클래스 정의
 #pragma region code01~03(SalesData)
 class SalesData {
 public:
@@ -15,6 +16,9 @@ public:
 };
 
 #pragma endregion
+
+#pragma endregion
+
 #pragma region 함수 정의
 vector<string> split_line(string& line, char delimiter);  // code03
 SalesData parse_line(string& line);						  // code03

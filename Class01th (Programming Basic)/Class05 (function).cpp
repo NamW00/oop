@@ -6,23 +6,27 @@
 #include <algorithm> // find 함수 사용
 using namespace std;
 const int MAX = 100;
-#pragma region 함수 정의(code46~)
-/*
-int power(int x, int y);			// code46
+#pragma region 함수정의 모음(code46~53)
+// int power(int x, int y);			// code46
 
-bool isPrime(int k);				// code47
+// bool isPrime(int k);				// code47
 
-void swap(int a, int b);			// code48
-void bubble_sort(int n, int data[]);// code48
+// void swap(int a, int b);				// code48
+// void bubble_sort(int n, int data[]); // code48
 
-void test_vec(vector<int> v);		// code49
-void test_arr(int arr[]);			// code49
+// void test_vec(vector<int> v);		// code49
+// void test_arr(int arr[]);			// code49
 
-string trim(string);				// code50
-void tolowercase(string);			// code50
-*/
+// string trim(string);					// code50
+// void tolowercase(string);			// code50
+
+// void bubble_sort(int n, int data[]);	 // code51
+// void swap(int& a, int& b);			 // code51
+
+// double calculate_average(vector<int> w); // code52
+// double calculate_average(vector<int> &w);// code53
+
 #pragma endregion
-
 
 int main() {
 #pragma region 1.6 함수(function), 매개변수, 그리고 프로그램의 기능적 분할
@@ -92,7 +96,10 @@ int main() {
 	while (infile >> str){			// 불러온 txt 파일을 단어별로 읽어들임
 		str = trim(str);			// 원하는 부분만 잘라내는 함수
 		if (str.length() > 0){		// 단어가 맞으면(trim함수에서 s <= t이면)
-			tolowercase(str);		// 소문자 변환
+			str = tolowercase(str);	// 소문자 변환 (방법1)
+			// tolowercase(str);
+			// 값에 의한 호출로 str이 소문자 변환 되지 않음
+			// 참조에 의한 호출로 바꾸면 정상적으로 작동된다.
 			auto it = find(words.begin(), words.end(), str);
 			// vector<int>::iterator it = find(first, last,
 			// 벡터에서의 find 사용법
@@ -108,12 +115,28 @@ int main() {
 		cout << s << " ";
 	*/
 #pragma endregion
-
+#pragma region code51(code48을 참조에 의한 연산)
+	/*
+	int data[MAX], n;
+	cin >> n;
+	for (int i = 0; i < n; i++)
+		cin >> data[i];
+	bubble_sort(n, data);
+	for (int i = 0; i < n; i++)
+		cout << data[i] << " ";
+	cout << endl;
+	*/
 #pragma endregion
-
+#pragma region code52(값 호출) vs code53(참조 호출):벡터 평균값 구하기)
+	/*
+	vector<int> v = { 1, 2, 3, 4, 5, 6, 7, 8 };
+	double avg = calculate_average(v);
+	cout << avg << endl;
+	*/
+#pragma endregion
+#pragma endregion
 	return 0;
 }
-
 
 #pragma region code46(int power(int, int);)
 /*int power(int x, int y) { // <cmath>의 power함수와 동일한 기능
@@ -187,9 +210,54 @@ string trim(string str) {
 	else
 		return "";
 }
-void tolowercase(string str) {
+// 방법 1 : return 값 string 지정
+string tolowercase(string str) {
+	for (int i = 0; i < str.length(); i++)
+		str[i] = tolower(str[i]);
+	return str;
+}
+// 방법 2 : 참조에 의한 호출
+void tolowercase(string& str){
 	for (int i = 0; i < str.length(); i++)
 		str[i] = tolower(str[i]);
 }
 */
 #pragma endregion
+#pragma region code51(void bubble_sort(int,int arr[]; void swap(int,int);)
+/*
+void bubble_sort(int n, int data[]) {
+	for (int i = n-1; i>=0; i--){
+		for (int j = 0; j < i; j++){
+			if(data[j]>data[j+1])
+				swap(data[j], data[j + 1]);
+		}
+	}
+}
+void swap(int& a, int& b) { // 참조에 의한 연산
+	int tmp = a;
+	a = b;
+	b = tmp;
+}
+*/
+#pragma endregion
+#pragma region code52(double calculate_average(vector);)
+/*
+double calculate_average(vector<int> w) { // 값에 의한 호출
+	double sum = 0.0;
+	for (auto e : w)
+		sum += e;
+	return sum / w.size();
+}
+*/
+#pragma endregion
+#pragma region code53(double calculate_average(vecto<int> &w);)
+/*
+double calculate_average(vector<int> &w) { // 참조에 의한 호출
+	double sum = 0.0;
+	for (auto e : w)
+		sum += e;
+	return sum / w.size();
+}
+*/
+#pragma endregion
+
