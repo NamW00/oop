@@ -129,7 +129,8 @@
   <ItemGroup>
     <ClCompile Include="Class01th %28Class and Object%29.cpp" />
     <ClCompile Include="Class02th %28Member Function and Method%29.cpp" />
-    <ClCompile Include="Class03th (Constructor).cpp" />
+    <ClCompile Include="code07%28Polynomial_member_func%29.cpp" />
+    <ClCompile Include="code08(constructor).cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

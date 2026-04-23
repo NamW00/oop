@@ -21,7 +21,10 @@
     <ClCompile Include="Class02th %28Member Function and Method%29.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Class03th (Constructor).cpp">
+    <ClCompile Include="code07%28Polynomial_member_func%29.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="code08(constructor).cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

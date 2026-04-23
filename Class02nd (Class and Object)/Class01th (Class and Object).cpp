@@ -6,7 +6,6 @@
 #include <algorithm>
 using namespace std;
 
-#pragma region 클래스 정의
 #pragma region code01~03(SalesData)
 class SalesData {
 public:
@@ -14,20 +13,52 @@ public:
 	int units_sold = 0;
 	double revenue = 0.0;
 };
+#pragma endregion
+#pragma region code05(MyPoint)
+class MyPoint {
+public:
+	double x;
+	double y;
+};
+class MyRectangle
+{
+public:
+	MyPoint lu; // left-upper(x좌표, y좌표)
+	double width;
+	double height;
+};
+
 
 #pragma endregion
-
+#pragma region code06(Term)
+class Term {
+public:
+	int coef; // 계수
+	int expo; // 차수
+};
+class Polynomial {
+public:
+	char name; // 다항식의 이름은 single charactor
+	vector<Term> terms; // 다항식의 항들을 저장하는 벡터
+};
 #pragma endregion
+
 
 #pragma region 함수 정의
-vector<string> split_line(string& line, char delimiter);  // code03
-SalesData parse_line(string& line);						  // code03
-void insertRecord(SalesData r, vector<SalesData>& record);// code03
-void sort_by_average_price(vector<SalesData>& records);	  // code03
+// vector<string> split_line(string& line, char delimiter);  // code03
+// SalesData parse_line(string& line);						  // code03
+// void insertRecord(SalesData r, vector<SalesData>& record);// code03
+// void sort_by_average_price(vector<SalesData>& records);	  // code03
+
+// void bubbleSort(vector<MyRectangle>& rects); // code05
+void handlePrint();
+void handleCalc();
+void handleCreate();
+void handleAddTerm();
 
 #pragma endregion
 
-
+vector<Polynomial> polys; // 정의된 모든 다항식들을 저장하기 위한 다항식들의 벡터
 
 int main() {
 #pragma region 2.1 클래스와 객체
@@ -55,6 +86,7 @@ int main() {
 	*/
 #pragma endregion
 #pragma region code03(csv파일 분석 후 각 도서당 판매권수,매출 집계 오름차순 정렬)
+	/*
 	vector<SalesData> records; // SalesData 타입의 벡터에 저장. 하나의 책은 하나의 항목으로 합쳐서 저장
 	ifstream infile("sales_records.csv");
 	string line;
@@ -63,7 +95,7 @@ int main() {
 		if (line.length() <= 0)
 			continue;
 		SalesData r = parse_line(line); // 한라인을 분해하여 하나의 SalesData 객체로 만들어 반환
-		insertRecord(r, records); // 벡터 records에 추가. 
+		insertRecord(r, records); // 벡터 records에 추가.
 		// 이미 등록된 책이면 팔린 권수, 매출 반영
 		// 새로운 책이면 새로 추가
 	}
@@ -72,9 +104,44 @@ int main() {
 	for (auto r : records)
 		cout << r.isbn << ":" << r.units_sold << ":" << r.revenue
 		<< ":" << r.revenue / r.units_sold << endl;
+	*/
 
 #pragma endregion
+#pragma region code05(n개의 직사각형에 대한 데이터 받은 후 면적 작은 것->큰것 순 정렬)
+	/*
+	vector<MyRectangle> rects;
+	ifstream source("rects.txt");
+	double x, y, w, h;
+	while (source >> x >> y >> w >> h) {
+		MyRectangle tmp;
+		tmp.lu.x = x, tmp.lu.y = y, tmp.height = h, tmp.width = w;
+		rects.push_back(tmp);
+	}
+	source.close();
+	bubbleSort(rects);
+	for (auto r : rects)
+		cout << r.lu.x << " " << r.lu.y << " " << r.height << " " << r.width << endl;
+	*/
 
+#pragma endregion
+#pragma region code06(다항 함수)
+	string command;
+	while (true) {
+		cout << "$ ";
+		cin >> command;
+		if (command == "print")
+			handlePrint();
+		else if (command == "calc")
+			handleCalc();
+		else if (command == "create")
+			handleCreate();
+		else if (command == "add")
+			handleAddTerm();
+		else if (command == "exit") {
+			break;
+		}
+	}
+#pragma endregion
 
 #pragma endregion
 
@@ -82,6 +149,7 @@ int main() {
 }
 
 #pragma region code03
+/*
 SalesData parse_line(string& line) { // 복사 할 필요 없기 때문에 참조로 받음
 	SalesData r;
 	vector<string> tokens = split_line(line, ','); // ','를 기준으로 분할
@@ -135,5 +203,21 @@ void sort_by_average_price(vector<SalesData>& records) { // 평균 오름차순 
 		}
 	}
 }
+*/
 
 #pragma endregion
+/*
+void bubbleSort(vector<MyRectangle>& rects){
+	for (int i = rects.size()-1; i >= 0; i--){
+		for (int j = 0; j < i; j++){
+			if (rects[j].width*rects[j].height > rects[j+1].width * rects[j+1].height){
+				swap(rects[j], rects[j + 1]);
+			}
+		}
+
+	}
+}
+*/
+#pragma endregion
+
+
