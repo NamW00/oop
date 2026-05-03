@@ -42,8 +42,19 @@ int main() {
             ver.push_back({ x1, y1, x2, y2 });
         }
     }
+    // 모든 교차점을 저장
+    /* 
+    for (int i = 0; i < N; i++){
+        for (int j = 0; j < N; j++){
+            Dot pt;
+            if (check(lines[i], lines[j], pt))
+                intersect.push_back(pt);
+        }
+    }
+    */
 
     vector<Point> intersections;
+    // 모든 교차점을 저장
     for (const auto& h : hor) {
         for (const auto& v : ver) {
             Point p;

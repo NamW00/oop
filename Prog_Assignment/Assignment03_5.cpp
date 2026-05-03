@@ -1,10 +1,12 @@
+#define _USE_MATH_DEFINES
 #include <iostream>
 #include <vector>
-#include <cmath>
+#include <math.h>
 #include <algorithm>
 #include <string>
-
 using namespace std;
+
+// const double pi = acos(-1.0);
 
 // 추상 기상 클래스
 class Shape {
@@ -14,6 +16,18 @@ public:
     virtual void print() const = 0;
     virtual ~Shape() {}
 };
+/*
+struct Shape {
+    double area;
+    string info;
+    bool operator<(const Shape& other) const {
+        return area < other.area;
+    }
+};*/
+
+// 원과 사각형
+// 원의 중심과 사각형의 네 꼭지점의 좌표와 비교해서 내부에 있는지
+// 원과 사각형의 네변의 수선을 내렸을때 원의 중심과의 거리가 반지름 보다 작은 것이 있는지
 
 // 직사각형 클래스
 class Rect : public Shape {
@@ -27,7 +41,7 @@ public:
 
     bool intersects(double cx, double cy, double r) const override {
         // 원의 중심 - 사각형 위 최단 거리 점 찾기
-        double closestX = max((double)xmin, min(cx, (double)xmax));
+        double closestX = max((double)xmin, min(cx, (double)xmax)); 
         double closestY = max((double)ymin, min(cy, (double)ymax));
 
         double dx = cx - closestX;
