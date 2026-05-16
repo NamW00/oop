@@ -63,3 +63,26 @@ int main() {
 
     return 0;
 }
+/*
+#include <iomanip> // setprecision 출력 범위 지정하기 fixed
+
+struct Rect {
+    int x1, y1, x2, y2;
+};
+int area(Rect r) {
+    return (r.x2 - r.x1) * (r.y2 - r.y1);
+}
+int overapArea(Rect a, Rect b) {
+    int w = min(a.x2, b.x2) - max(a.x1, b.x1);
+    int h = min(a.y2, b.y2) - max(a.y1, b.y1);
+
+}
+
+int encloseArea(Rect a, Rect b) {
+
+}
+
+int main() {
+    double bestCoverage = 0.0;
+    int bstEnclose
+}*/
