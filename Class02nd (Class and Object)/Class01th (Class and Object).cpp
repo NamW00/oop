@@ -66,7 +66,7 @@ int main() {
 #pragma region code01(객체 생성과 필드(멤버변수)값 초기화)
 	/*
 	SalesData first; // 하나의 SalesData(Class) 타입의 객체 = first(object)라고 한다
-	first.isbn = "978-0-321"; // first객체의 필드들에 .연산자로 접근하여 값을 쓰고 읽는다.
+	first.isbn = "978-0-321-71411-4"; // first객체의 필드들에 .연산자로 접근하여 값을 쓰고 읽는다.
 	first.units_sold = 3;
 	first.revenue = 32000;
 	cout << first.isbn << " " << first.units_sold << " "
@@ -78,7 +78,7 @@ int main() {
 	cout << data[0].isbn << " " << data[0].units_sold << " "
 		<< data[0].revenue << endl;
 
-	data[1].isbn = "978-0-111";
+	data[1].isbn = "978-0-111-71524-1";
 	data[1].units_sold = 11;
 	data[1].revenue = 56000;
 	cout << data[1].isbn << " " << data[1].units_sold << " "
