@@ -13,28 +13,40 @@ public:
     int& operator()(int r, int c) {
         return data[r][c];
     }
-
+    // 1. 행렬 합
     MatrixInt operator+(MatrixInt& other) {
         MatrixInt result(rows, cols);
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < cols; j++)
                 result.data[i][j] = this->data[i][j] + other.data[i][j];
-            }
-        }
+        return result;
     }
+    // 2. 행렬 합 대입
     MatrixInt& operator+=(MatrixInt& other) {
         for (int i = 0; i < rows; i++)
-            for (int j = 0; j < cols; i++)
+            for (int j = 0; j < cols; j++)
                 this->data[i][j] += other.data[i][j];
         return *this;
     }
+    // 3. 전치행렬
     MatrixInt operator~() {
         MatrixInt result(cols, rows);
         for (int i = 0; i < rows; i++)
             for (int j = 0; j < cols; j++)
-                result.data[i][j] = this->data[i][j];
+                result.data[j][i] = this->data[i][j];
         return result;
     }
+    // 4. 행렬 곱
+    MatrixInt operator*(const MatrixInt& other) {
+        MatrixInt result(this->rows, other.cols);
+        for (int i = 0; i < this->rows; ++i)
+            for (int j = 0; j < other.cols; ++j)
+                for (int k = 0; k < this->cols; ++k)
+                    result.data[i][j] += this->data[i][k] * other.data[k][j];
+        return result;
+    }
+    // 5. 스칼라 곱셈
+    friend MatrixInt operator*(int scalar, const MatrixInt& mat);
 
     void print() {
         for (int i = 0; i < rows; i++) {
@@ -44,6 +56,13 @@ public:
         }
     }
 };
+MatrixInt operator*(int scalar, const MatrixInt& mat) {
+    MatrixInt result(mat.rows, mat.cols);
+    for (int i = 0; i < mat.rows; i++)
+        for (int j = 0; j < mat.cols; j++)
+            result.data[i][j] = scalar * mat.data[i][j];
+    return result;
+}
 
 int main() {
     MatrixInt mat1(3, 4);
